@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'reservadorApp',
 ]
 
 MIDDLEWARE = [
@@ -78,6 +79,17 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.oracle',
+#        'NAME': BASE_DIR / 'xe',
+#        'USER': 'Simon',
+#        'PASSWORD': '123456',
+#        'HOST': 'localhost',
+#        'PORT': '1521',
+#    }
+#}
 
 
 # Password validation
