@@ -7,5 +7,27 @@
 </head>
 <body>
     <h1>¡Hola Mundo!</h1>
+    <h1>Salas del ITID</h1>
+    <nav class="nav">
+        <a href="/">Principal</a>
+        {% for sala in salas %}
+        <a href="/detalle_sala/{{ sala.id }}/">{{ sala.nombre }}</a>
+        {% endfor %}
+        <a href='admin/'>Admnistración</a>
+    </nav>
+    {% for sala in salas %}
+        <div>
+            <h3>{{ sala.nombre }} (Capacidad: {{ sala.capacidad_maxima }})</h3>
+            {% if sala.disponible %}
+                <p style="color: green;">Disponible</p>
+                <a href="{% url 'crear_reserva' %}">Reservar</a>
+            {% else %}
+                <p style="color: red;">Reservada</p>
+            {% endif %}
+            <br>
+            <a href="{% url 'detalle_sala' sala.id %}">Ver detalle</a>
+        </div>
+        <hr>
+    {% endfor %}
 </body>
 </html>
