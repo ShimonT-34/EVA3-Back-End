@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'estilos.css' %}">
+</head>
+<body>
+    <header class="header">
+        <h1>Biblioteca</h1>
+        <p>Sistema de reserva de salas</p>
+    </header>
+
+    <nav class="nav">
+        <a href="/">Principal</a>
+        <a href="{% url 'lista_salas' %}">Lista de Salas</a>
+        <a href="{% url 'crear_reserva' %}">Reservar</a>
+        <a href="/admin/">Administración</a>
+    </nav>
+
+    <main class="main-content">
+        {% block content %}
+        <!-- Acá van los templates hijos, no tenía este bloque, por eso no se mostraban -->
+        {% endblock %}
+    </main>
+
+    <footer class="footer">
+        <h1>░░░░░░███████ ]▄▄▄▄▄▄▄▄▃</h1>
+        <h1>▂▄▅█████████▅▄▃▂</h1>
+        <h1>I███████████████████].</h1>
+        <h1>◥⊙▲⊙▲⊙▲⊙▲⊙▲⊙▲⊙◤... </h1>
+    </footer>
+</body>
+</html>

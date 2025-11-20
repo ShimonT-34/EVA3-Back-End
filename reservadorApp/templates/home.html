@@ -1,20 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block content %}
+
     <h1>¡Hola Mundo!</h1>
     <h1>Salas del ITID</h1>
-    <nav class="nav">
-        <a href="/">Principal</a>
-        {% for sala in salas %}
-        <a href="/detalle_sala/{{ sala.id }}/">{{ sala.nombre }}</a>
-        {% endfor %}
-        <a href='admin/'>Admnistración</a>
-    </nav>
     {% for sala in salas %}
         <div>
             <h3>{{ sala.nombre }} (Capacidad: {{ sala.capacidad_maxima }})</h3>
@@ -29,5 +18,5 @@
         </div>
         <hr>
     {% endfor %}
-</body>
-</html>
+
+{% endblock %}
