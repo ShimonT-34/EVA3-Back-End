@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'reservadorProject.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'nombreDB',
-        'USER': 'simon',
+        'NAME': env('NAME'),
+        'USER': env('USER'),
         'PASSWORD': env('PASSWORD'),
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'HOST': env('HOST'),
+        'PORT': env('PORT'),
     }
 }
 
